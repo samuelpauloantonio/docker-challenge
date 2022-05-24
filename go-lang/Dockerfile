@@ -10,7 +10,8 @@ COPY . .
 
 ENV CGO_ENABLED=0
 
-RUN GOOS=linux go build ./main.go
+
+RUN GOOS=linux go build -ldflags "-s -w" main.go
 
 FROM scratch
 
